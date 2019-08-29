@@ -1,1 +1,5 @@
-Run with `DEBUG=simpleportal:* npm start`
+Run:
+```bash
+$ npm install
+$ DEBUG=simpleportal:* npm start
+```
