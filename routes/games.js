@@ -1,10 +1,13 @@
+var api = require('./api')
 var express = require('express');
-var api_helper = require('./api_helper')
 var router = express.Router();
 
-/* GET users listing. */
+/**
+ * All routes for this router will be under portal.playtable.com/games.
+ */
+/* GET games list. */
 router.get('/', function(req, res, next) {
-  api_helper.makeAPICall('http://api-stage-b.us-west-1.elasticbeanstalk.com/api/v1/games')
+  api.makeAPIRequest(api.baseUri + '/games')
   .then(response => {
     res.json(response)
   })
